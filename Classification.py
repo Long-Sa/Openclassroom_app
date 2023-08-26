@@ -4,7 +4,7 @@ import pickle
 import sklearn
 
 embedding_path = r'C:/Users/samyb/Documents/OpenClassroom/Openclassroom_app/model.json'
-filepath = r'C:/Users/samyb/Documents/OpenClassroom/Openclassroom_app/binerizer.json'
+filepath = r'C:/Users/samyb/Documents/OpenClassroom/Openclassroom_app/binarizer.json'
 
 
 def classification_(embedding):
