@@ -1,6 +1,4 @@
 import streamlit as st
-StreamlitPatcher().jupyter()
-
 
 def run():
     st.title("Prédiction des tags pour les questions stackoverflow")
