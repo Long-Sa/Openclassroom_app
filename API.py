@@ -1,4 +1,7 @@
 import streamlit as st
+from Classification import classification_
+from Preprocessing import preprocessing
+
 
 def run():
     st.title("Prédiction des tags pour les questions stackoverflow")

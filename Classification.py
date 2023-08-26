@@ -18,7 +18,7 @@ def classification_(embedding):
     tags_pred = loaded_binerizer.inverse_transform(predic_input)
     
     tags = sorted(filter(None, set(tags_pred)))
-    Outpu = list(set(map(''.join, chain.from_iterable(tags))))
-    print(Outpu)
-    return Outpu
+    Output = list(set(map(''.join, chain.from_iterable(tags))))
+
+    return Output
 
