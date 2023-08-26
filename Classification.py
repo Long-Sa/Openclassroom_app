@@ -10,8 +10,8 @@ filepath = r'C:/Users/samyb/Documents/OpenClassroom/Openclassroom_app/binarizer.
 def classification_(embedding):
     # load the model from server
 
-    loaded_model = pickle.load(open(embedding_path, 'rb'))
-    loaded_binerizer = pickle.load(open(filepath, 'rb'))
+    loaded_model = pickle.load(open('model.json', 'rb'))
+    loaded_binerizer = pickle.load(open('binarizer.json', 'rb'))
     
     predict = loaded_model.predict(embedding) > 0.3
     predic_input = predict.astype(int)
