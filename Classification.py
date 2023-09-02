@@ -2,11 +2,15 @@ from functools import reduce
 from itertools import chain
 import pickle
 import sklearn
+import tensorflow_hub as hub
+import numpy as np
 
 
 def feature_USE_fct(sentences, b_size) :
+    
+    embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+    
     batch_size = b_size
-    time1 = time.time()
 
     for step in range(len(sentences)//batch_size) :
         idx = step*batch_size
@@ -17,7 +21,6 @@ def feature_USE_fct(sentences, b_size) :
         else :
             features = np.concatenate((features,feat))
 
-    time2 = np.round(time.time() - time1,0)
     return features
 
 def classification_(text):
@@ -36,14 +39,12 @@ def classification_(text):
     return Output
 
 
-def classification_word2vec(text):
+def classification_USE(text):
     # load the model from server
 
-    loaded_model = pickle.load(open('model_worUSE.json', 'rb'))
+    loaded_model = pickle.load(open('model_USE.json', 'rb'))
     loaded_binerizer = pickle.load(open('binarizer.json', 'rb'))
     
-    
-    embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
     features_USE = feature_USE_fct(text.to_list(), 1)
     
    

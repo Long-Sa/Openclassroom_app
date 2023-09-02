@@ -3,14 +3,7 @@ from Classification import classification_
 from Classification import classification_word2vec
 from Preprocessing import preprocessing
 import tensorflow as tf
-import tensorflow.keras
-from tensorflow.keras import backend as K
 
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras import metrics as kmetrics
-from tensorflow.keras.layers import *
-from tensorflow.keras.models import Model
 
 
 def run():
@@ -26,7 +19,7 @@ def run():
         body = titre + texte
       
         if st.button("Predict"):
-            output1 = classification_word2vec(preprocessing((body)))
+            output1 = classification_USE(preprocessing((body)))
             st.success(f" Les tags les plus pertinents sont {output1}")
             st.balloons()
             
