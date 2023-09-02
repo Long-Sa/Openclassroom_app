@@ -2,6 +2,15 @@ import streamlit as st
 from Classification import classification_
 from Classification import classification_word2vec
 from Preprocessing import preprocessing
+import tensorflow as tf
+import tensorflow.keras
+from tensorflow.keras import backend as K
+
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras import metrics as kmetrics
+from tensorflow.keras.layers import *
+from tensorflow.keras.models import Model
 
 
 def run():
