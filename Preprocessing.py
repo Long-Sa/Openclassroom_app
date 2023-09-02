@@ -4,6 +4,8 @@ from nltk import word_tokenize
 from nltk.tokenize import sent_tokenize
 import nltk
 from nltk.stem import WordNetLemmatizer
+import re 
+
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
@@ -49,6 +51,7 @@ def preprocessing(question):
     my_file = open("stopwords.txt", "r")
     # reading the file
     stop_words = my_file.read()
+    stop_words = re.sub(r'[]!"$%&\'()*+,./:;=#@?[\\^_`{|}~-]+', "", tags).split(" ")
     
     try:
         res = word_tokenize(cleaned_text, language='english')
