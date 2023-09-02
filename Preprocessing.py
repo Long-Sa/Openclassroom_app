@@ -42,7 +42,7 @@ def preprocessing(question):
     cleaned_text = " ".join(res)
 
     # opening the file in read mode
-    my_file = open("file1.txt", "r")
+    my_file = open("stopwords.txt", "r")
     # reading the file
     stop_words = my_file.read()
     
