@@ -1,5 +1,6 @@
 import streamlit as st
 from Classification import classification_
+from Classification import classification_word2vec
 from Preprocessing import preprocessing
 
 
