@@ -50,8 +50,8 @@ def preprocessing(question):
     # opening the file in read mode
     my_file = open("stopwords.txt", "r")
     # reading the file
-    stop_words = my_file.read()
-    stop_words = re.sub(r'[]!"$%&\'()*+,./:;=#@?[\\^_`{|}~-]+', "", tags).split(" ")
+    words = my_file.read()
+    stop_words = re.sub(r'[]!"$%&\'()*+,./:;=#@?[\\^_`{|}~-]+', "", words).split(" ")
     
     try:
         res = word_tokenize(cleaned_text, language='english')
