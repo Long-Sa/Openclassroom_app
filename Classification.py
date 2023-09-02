@@ -3,8 +3,8 @@ from itertools import chain
 import pickle
 import sklearn
 
-embedding_path = r'C:/Users/samyb/Documents/OpenClassroom/Openclassroom_app/model.json'
-filepath = r'C:/Users/samyb/Documents/OpenClassroom/Openclassroom_app/binarizer.json'
+embedding_path = r'model.json'
+filepath = r'binarizer.json'
 
 
 def classification_(embedding):

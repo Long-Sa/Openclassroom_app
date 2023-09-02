@@ -41,7 +41,10 @@ def preprocessing(question):
     res = list(filter(lambda x: len(x)>3 , res))
     cleaned_text = " ".join(res)
 
-    stop_words = set(stopwords.words('english'))
+    # opening the file in read mode
+    my_file = open("file1.txt", "r")
+    # reading the file
+    stop_words = my_file.read()
     
     try:
         res = word_tokenize(cleaned_text, language='english')
