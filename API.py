@@ -2,7 +2,6 @@ import streamlit as st
 from Classification import classification_
 from Classification import classification_USE
 from Preprocessing import preprocessing
-import tensorflow as tf
 
 
 
@@ -12,7 +11,7 @@ def run():
     add_selectbox = st.sidebar.selectbox("How would you like to predict?", ("Word2Vec et Regression Logistique", "TFIDF et SVC"))
     
     
-    if add_selectbox == "Word2Vec et Regression Logistique":
+    if add_selectbox == "USE et Regression Logistique":
         
         titre = st.text_area('Donner un titre à votre poste')
         texte = st.text_area('Expliquer votre interrogation')
@@ -30,7 +29,7 @@ def run():
         body = titre + texte
         
         if st.button("Predict"):
-            output2 = classification_(preprocessing(([body])))
+            output2 = classification_(preprocessing((body)))
             st.success(f" Les tags les plus pertinents sont {output2}")
             st.balloons()
                
