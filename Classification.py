@@ -45,7 +45,7 @@ def classification_USE(text):
     loaded_model = pickle.load(open('model_USE.json', 'rb'))
     loaded_binerizer = pickle.load(open('binarizer.json', 'rb'))
     
-    features_USE = feature_USE_fct(text.to_list(), 1)
+    features_USE = feature_USE_fct(text, 1)
     
    
     predict = loaded_model.predict_proba(features_USE) > 0.3
