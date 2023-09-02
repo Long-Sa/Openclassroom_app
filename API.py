@@ -16,7 +16,7 @@ def run():
         body = titre + texte
       
         if st.button("Predict"):
-            output = classification_(preprocessing((body)))
+            output = classification_word2vec(preprocessing((body)))
             st.success(f" Les tags les plus pertinents sont {output}")
             st.balloons()
             
@@ -30,7 +30,5 @@ def run():
             output = classification_(preprocessing((body)))
             st.success(f" Les tags les plus pertinents sont {output}")
             st.balloons()
-             
-            
-    
+               
 run()  
