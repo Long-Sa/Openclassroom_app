@@ -5,6 +5,7 @@ from nltk.tokenize import sent_tokenize
 import nltk
 from nltk.stem import WordNetLemmatizer
 nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 
 def preprocessing(question):
   
