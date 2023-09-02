@@ -8,7 +8,7 @@ from Preprocessing import preprocessing
 def run():
     st.title("Prédiction des tags pour les questions stackoverflow")
     st.subheader('Cette application sert à proposer des tags pertinents les posts stackoverflow')
-    add_selectbox = st.sidebar.selectbox("How would you like to predict?", ("Word2Vec et Regression Logistique", "TFIDF et SVC"))
+    add_selectbox = st.sidebar.selectbox("How would you like to predict?", ("USE et Regression Logistique", "TFIDF et SVC"))
     
     
     if add_selectbox == "USE et Regression Logistique":
