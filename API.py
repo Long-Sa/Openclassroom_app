@@ -16,8 +16,8 @@ def run():
         body = titre + texte
       
         if st.button("Predict"):
-            output = classification_word2vec(preprocessing((body)))
-            st.success(f" Les tags les plus pertinents sont {output}")
+            output1 = classification_word2vec(preprocessing((body)))
+            st.success(f" Les tags les plus pertinents sont {output1}")
             st.balloons()
             
     elif add_selectbox == "TFIDF et SVC":
@@ -27,8 +27,8 @@ def run():
         body = titre + texte
         
         if st.button("Predict"):
-            output = classification_(preprocessing((body)))
-            st.success(f" Les tags les plus pertinents sont {output}")
+            output2 = classification_(preprocessing((body)))
+            st.success(f" Les tags les plus pertinents sont {output2}")
             st.balloons()
                
 run()  
