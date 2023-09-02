@@ -4,6 +4,7 @@ from nltk import word_tokenize
 from nltk.tokenize import sent_tokenize
 import nltk
 from nltk.stem import WordNetLemmatizer
+nltk.download('punkt')
 
 def preprocessing(question):
   
@@ -25,6 +26,7 @@ def preprocessing(question):
         u'\U000024C2-\U0001F251'
         ']+',
         flags=re.UNICODE)
+    
     wo_specials =  emoji_pattern.sub(r'', wo_ascii)
    
     wo_punct =  re.sub(r'[]!"$%&\'()*+,./:;=#@?[\\^_`{|}~-]+', " ", wo_specials)
@@ -38,7 +40,7 @@ def preprocessing(question):
         return text
     
     res = res.split(" ")
-    res = list(filter(lambda x: len(x)>3 , res))
+    res = list(filter(lambda x: len(x)>2 , res))
     cleaned_text = " ".join(res)
 
     # opening the file in read mode
