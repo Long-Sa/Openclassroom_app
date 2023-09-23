@@ -4,13 +4,20 @@ import pickle
 import sklearn
 import tensorflow_hub as hub
 import numpy as np
+import bz2file as bz2
+import pickle
 
 
+def decompress_pickle(file):
+
+    data = bz2.BZ2File(file, 'rb')
+    data = pickle.load(data)
+    return data
 
 def classification_(text):
     # load the model from server
 
-    loaded_model = pickle.load(open('model.json', 'rb'))
+    loaded_model = decompress_pickle('model.pbz2')
     loaded_binerizer = pickle.load(open('binarizer.json', 'rb'))
     
     predict = loaded_model.predict_proba(text) > 0.3
