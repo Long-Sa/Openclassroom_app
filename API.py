@@ -11,7 +11,7 @@ def run():
     add_selectbox = st.sidebar.selectbox("How would you like to predict?", ("USE et Regression Logistique", "TFIDF et SVC"))
     
     
-    if add_selectbox == "USE et Regression Logistique":
+    if add_selectbox == "USE et SVC linéaire":
         
         titre = st.text_area('Donner un titre à votre poste')
         texte = st.text_area('Expliquer votre interrogation')
@@ -22,7 +22,7 @@ def run():
             st.success(f" Les tags les plus pertinents sont {output1}")
             st.balloons()
             
-    elif add_selectbox == "TFIDF et SVC":
+    elif add_selectbox == "TFIDF et SVC linéaire":
         
         titre = st.text_area('Donner un titre à votre poste')
         texte = st.text_area('Expliquer votre interrogation')
